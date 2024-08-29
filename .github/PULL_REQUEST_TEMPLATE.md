@@ -1,5 +1,5 @@
 <!--
-  Thank you for your contribution to the Maven Java Template! We appreciate your efforts.
+  Thank you for your contribution to the Init Sources Maven Plugin! We appreciate your efforts.
 
   Before submitting your pull request, please ensure you've covered the following:
 
@@ -13,5 +13,5 @@
 
   When merging the PR, please use the default title, and include the issue reference `#issue_number` in parentheses after the title if applicable and missing.
 
-  For more details on contributing, please refer to our guide: https://github.com/lengors/maven-java-template/blob/main/CONTRIBUTING.md
+  For more details on contributing, please refer to our guide: https://github.com/lengors/init-sources-maven-plugin/blob/main/CONTRIBUTING.md
 -->
