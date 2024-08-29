@@ -6,11 +6,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.lengors</groupId>
-  <artifactId>maven-java-template</artifactId>
-  <version>1.0.0</version>
-  <name>maven-java-template</name>
-  <url>https://github.com/lengors/maven-java-template</url>
-  <description>Template repository for maven projects written in java.</description>
+  <artifactId>init-sources-maven-plugin</artifactId>
+  <version>0.0.0-local.0</version>
+  <name>init-sources-maven-plugin</name>
+  <url>https://github.com/lengors/init-sources-maven-plugin</url>
+  <description>Maven plugin to reset and initialize source roots of maven projects.</description>
 
   <developers>
     <developer>
@@ -20,7 +20,7 @@
   </developers>
 
   <scm>
-    <url>https://github.com/lengors/maven-java-template</url>
+    <url>https://github.com/lengors/init-sources-maven-plugin</url>
   </scm>
 
   <licenses>
@@ -43,15 +43,12 @@
     <maven.checkerframework.version>3.46.0</maven.checkerframework.version>
     <maven.checkstyle.version>3.4.0</maven.checkstyle.version>
     <maven.compiler.version>3.13.0</maven.compiler.version>
-    <maven.assembly.version>3.7.1</maven.assembly.version>
     <maven.mockito.version>5.12.0</maven.mockito.version>
     <maven.javadoc.version>3.8.0</maven.javadoc.version>
-    <maven.lombok.version>1.18.34</maven.lombok.version>
     <maven.jacoco.version>0.8.12</maven.jacoco.version>
     <maven.source.version>3.3.1</maven.source.version>
     <maven.junit.version>5.10.3</maven.junit.version>
     <maven.gpg.version>3.2.4</maven.gpg.version>
-    <maven.jar.version>3.4.2</maven.jar.version>
 
     <!-- SonarCloud -->
     <sonar.organization>lengors-github</sonar.organization>
@@ -77,13 +74,6 @@
       <groupId>org.checkerframework</groupId>
       <artifactId>checker-qual</artifactId>
       <version>${maven.checkerframework.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>${maven.lombok.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -223,12 +213,6 @@
               <fork>true</fork> <!-- Must fork or else JVM arguments are ignored. -->
               <annotationProcessorPaths>
                 <path>
-                  <groupId>org.projectlombok</groupId>
-                  <artifactId>lombok</artifactId>
-                  <version>${maven.lombok.version}</version>
-                </path>
-                
-                <path>
                   <groupId>org.checkerframework</groupId>
                   <artifactId>checker</artifactId>
                   <version>${maven.checkerframework.version}</version>
@@ -238,14 +222,6 @@
                 <!-- Add all the checkers you want to enable here -->
                 <annotationProcessor>org.checkerframework.checker.nullness.NullnessChecker</annotationProcessor>
                 <annotationProcessor>org.checkerframework.checker.resourceleak.ResourceLeakChecker</annotationProcessor>
-
-                <!--
-                  NOTE: Lombok's annotation processors have to appear AFTER the Checker
-                  Framework processors.  This is extremely confusing, because Lombok's
-                  modifications have to happen FIRST.
-                -->
-                <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
-                <annotationProcessor>lombok.launch.AnnotationProcessorHider$ClaimingProcessor</annotationProcessor>
               </annotationProcessors>
               <compilerArgs>
                 <arg>-Xmaxerrs</arg>
@@ -325,58 +301,6 @@
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
               </compilerArgs>
             </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>jar</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>${maven.jar.version}</version>
-            <configuration>
-              <archive>
-                <manifest>
-                  <addClasspath>true</addClasspath>
-                  <mainClass>io.github.lengors.maven_java_template.Example</mainClass>
-                </manifest>
-              </archive>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>assemble</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <version>${maven.assembly.version}</version>
-            <configuration>
-              <archive>
-                <manifest>
-                  <mainClass>io.github.lengors.maven_java_template.Example</mainClass>
-                </manifest>
-              </archive>
-              <descriptorRefs>
-                <descriptorRef>jar-with-dependencies</descriptorRef>
-              </descriptorRefs>
-            </configuration>
-            <executions>
-              <execution>
-                <phase>package</phase>
-                <goals>
-                  <goal>single</goal>
-                </goals>
-              </execution>
-            </executions>
           </plugin>
         </plugins>
       </build>
