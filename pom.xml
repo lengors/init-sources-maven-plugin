@@ -11,6 +11,7 @@
   <name>init-sources-maven-plugin</name>
   <url>https://github.com/lengors/init-sources-maven-plugin</url>
   <description>Maven plugin to reset and initialize source roots of maven projects.</description>
+  <packaging>maven-plugin</packaging>
 
   <developers>
     <developer>
@@ -174,6 +175,13 @@
         <version>${maven.javadoc.version}</version>
         <configuration>
           <detectLinks>true</detectLinks>
+          <dependencyLinks>
+            <dependencyLink>
+              <groupId>org.checkerframework</groupId>
+              <artifactId>checker-qual</artifactId>
+              <url>https://checkerframework.org/api</url>
+            </dependencyLink>
+          </dependencyLinks>
         </configuration>
         <executions>
           <execution>
