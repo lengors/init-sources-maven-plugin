@@ -175,6 +175,13 @@
         <version>${maven.javadoc.version}</version>
         <configuration>
           <detectLinks>true</detectLinks>
+          <dependencyLinks>
+            <dependencyLink>
+              <groupId>org.checkerframework</groupId>
+              <artifactId>checker-qual</artifactId>
+              <url>https://checkerframework.org/api</url>
+            </dependencyLink>
+          </dependencyLinks>
         </configuration>
         <executions>
           <execution>
