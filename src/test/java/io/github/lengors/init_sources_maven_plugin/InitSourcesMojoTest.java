@@ -21,7 +21,7 @@ import java.io.IOException;
  *
  * @author lengors
  */
-public class InitSourcesMojoTest {
+class InitSourcesMojoTest {
   /**
    * Tests that when both source types are skipped, the plugin does not attempt to modify the Maven project.
    *
@@ -29,7 +29,7 @@ public class InitSourcesMojoTest {
    * @throws IllegalAccessException if there's an error accessing the Mojo's private fields.
    */
   @Test
-  public void shouldSkipSettingBothSourceTypes() throws MojoFailureException, IllegalAccessException {
+  void shouldSkipSettingBothSourceTypes() throws MojoFailureException, IllegalAccessException {
     final var mojo = new InitSourcesMojo();
 
     setSkip(mojo, SourceTypeFilter.BOTH);
@@ -49,7 +49,7 @@ public class InitSourcesMojoTest {
    * @throws IllegalAccessException if there's an error accessing the Mojo's private fields.
    */
   @Test
-  public void shouldCorrectlySetBothSourceTypes() throws MojoFailureException, IllegalAccessException {
+  void shouldCorrectlySetBothSourceTypes() throws MojoFailureException, IllegalAccessException {
     test(Arrays.asList("target/main"), Arrays.asList("target/test"));
   }
 
@@ -60,7 +60,7 @@ public class InitSourcesMojoTest {
    * @throws IllegalAccessException if there's an error accessing the Mojo's private fields.
    */
   @Test
-  public void shouldCorrectlyResetBothSourceTypes() throws MojoFailureException, IllegalAccessException {
+  void shouldCorrectlyResetBothSourceTypes() throws MojoFailureException, IllegalAccessException {
     test(null, null);
   }
 
@@ -71,7 +71,7 @@ public class InitSourcesMojoTest {
    * @throws IllegalAccessException if there's an error accessing the Mojo's private fields.
    */
   @Test
-  public void shouldCorrectlySkipSourceTypeCompile() throws MojoFailureException, IllegalAccessException {
+  void shouldCorrectlySkipSourceTypeCompile() throws MojoFailureException, IllegalAccessException {
     test(SourceType.COMPILE);
   }
 
@@ -82,7 +82,7 @@ public class InitSourcesMojoTest {
    * @throws IllegalAccessException if there's an error accessing the Mojo's private fields.
    */
   @Test
-  public void shouldCorrectlySkipSourceTypeTestCompile() throws MojoFailureException, IllegalAccessException {
+  void shouldCorrectlySkipSourceTypeTestCompile() throws MojoFailureException, IllegalAccessException {
     test(SourceType.TEST_COMPILE);
   }
 
@@ -90,7 +90,7 @@ public class InitSourcesMojoTest {
    * Tests that the plugin throws a {@link MojoFailureException} when the Maven project is not set.
    */
   @Test
-  public void shouldFailOnMissingMavenProject() {
+  void shouldFailOnMissingMavenProject() {
     final var mojo = new InitSourcesMojo();
     Assertions.assertThrows(MojoFailureException.class, mojo::execute);
   }
