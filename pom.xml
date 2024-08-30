@@ -7,7 +7,7 @@
 
   <groupId>io.github.lengors</groupId>
   <artifactId>init-sources-maven-plugin</artifactId>
-  <version>1.0.0-dev.2</version>
+  <version>1.0.0-alpha.1</version>
   <name>init-sources-maven-plugin</name>
   <url>https://github.com/lengors/init-sources-maven-plugin</url>
   <description>Maven plugin to reset and initialize source roots of maven projects.</description>
