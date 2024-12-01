@@ -1,3 +1,19 @@
+# v1.0.0 (2024-08-30)
+
+## ✨ New Features
+- [`34b57a0`](https://github.com/lengors/init-sources-maven-plugin/commit/34b57a0)  Create mojo for resetting and setting source roots 
+
+## 🚑 Critical Hotfixes
+- [`f50c8b4`](https://github.com/lengors/init-sources-maven-plugin/commit/f50c8b4)  Set packaging type to &#x60;maven-plugin&#x60;
+
+# v1.0.0-beta.1 (2024-08-30)
+
+## ✨ New Features
+- [`34b57a0`](https://github.com/lengors/init-sources-maven-plugin/commit/34b57a0)  Create mojo for resetting and setting source roots 
+
+## 🚑 Critical Hotfixes
+- [`f50c8b4`](https://github.com/lengors/init-sources-maven-plugin/commit/f50c8b4)  Set packaging type to &#x60;maven-plugin&#x60;
+
 # v1.0.0-alpha.1 (2024-08-30)
 
 ## ✨ New Features
