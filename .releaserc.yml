@@ -19,4 +19,4 @@ plugins:
     - assets:
       - CHANGELOG.md
       - pom.xml
-      message: "🔖 Update `package.json` to `${nextRelease.version}` [skip release]\n\n${nextRelease.notes}"
+      message: "🔖 Update `pom.xml` to `${nextRelease.version}` [skip release]\n\n${nextRelease.notes}"
