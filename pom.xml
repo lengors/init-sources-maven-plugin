@@ -41,7 +41,7 @@
 
     <!-- Dependency and plugins versions -->
     <maven.central-publishing.version>0.5.0</maven.central-publishing.version>
-    <maven.commons-lang3.version>3.16.0</maven.commons-lang3.version>
+    <maven.commons-lang3.version>3.18.0</maven.commons-lang3.version>
     <maven.checkerframework.version>3.46.0</maven.checkerframework.version>
     <maven.annotations.version>3.14.0</maven.annotations.version>
     <maven.checkstyle.version>3.4.0</maven.checkstyle.version>
